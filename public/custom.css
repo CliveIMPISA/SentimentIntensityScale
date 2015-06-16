@@ -21,7 +21,14 @@
 }
 
 .navbar.navbar-default {
-  background-color: rgba(99, 51, 222, 0.7);
+  background-color: rgba(0, 0, 0, 1);
   font-family: Arial, sans-serif;
-  color: #000000;
+  color: #FF0000;
+}
+
+.animated.image-animated {
+  width: 1000px;
+  height: 600px;
+  -webkit-animation: mymove 5s infinite;
+  animation: mymove 5s infinite;
 }
