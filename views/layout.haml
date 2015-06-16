@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title Credit Card Service
+    %title Carpinion Automobile Recommendation System
     %link{rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' }
     %link{rel: 'stylesheet', href: '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'}
     %link{rel: 'stylesheet', type: 'text/css', href: 'custom.css'}
@@ -13,19 +13,11 @@
             %strong CreditCard
         %div{class: 'collapse navbar-collapse'}
           %ul.nav.navbar-nav.navbar-right
-            - if @current_user
               %li{class: 'navbar-brand', style: "color:black;"}
-                = " Welcome #{@current_user.username}, "
-              %li
-                %a{href: '/logout' ,style: "text-decoration: underline;"} Logout?
-            - else
-              %li
-                %a{href: '/login'} Login
-              %li
-                %a{href: '/register'} Register
+                = " Welcome "
     .container
       .page-header
         %h1
-          %strong Welcome to Credit Card Service
+          %strong Welcome to Carpinion
       = haml :flash_bar
       = yield
