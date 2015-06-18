@@ -2,3 +2,4 @@ solution/
 db/*.db
 config/config_env.rb
 .bundle/
+*.csv

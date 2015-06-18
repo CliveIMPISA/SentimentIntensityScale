@@ -36,6 +36,7 @@ GEM
     mime-types (2.6.1)
     minitest (5.7.0)
     multi_xml (0.5.5)
+    pg (0.18.2)
     pony (1.11)
       mail (>= 2.0)
     protected_attributes (1.0.9)
@@ -96,6 +97,7 @@ DEPENDENCIES
   json
   jwt
   minitest
+  pg
   pony
   protected_attributes
   rack
