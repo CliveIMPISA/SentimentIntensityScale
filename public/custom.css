@@ -34,13 +34,13 @@
 }
 
 a:link {
-  color: red;
+  color: blue;
 }
 
 a:visited {
-  color:blue;
+  color:violet;
 }
 
 a:hover{
-  color: violet;
+  color: red;
 }
