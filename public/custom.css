@@ -32,3 +32,15 @@
   -webkit-animation: mymove 5s infinite;
   animation: mymove 5s infinite;
 }
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color:blue;
+}
+
+a:hover{
+  color: violet;
+}
