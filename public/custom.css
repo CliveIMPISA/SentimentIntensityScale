@@ -33,9 +33,16 @@
   100% {left: 4000px;}
 }
 
-@-webkit-keyframes move{
-  from{left: 0px;}
-    to{right: 500px;}
+@-moz-keyframes example {
+  25% {left: 500px;}
+  50% {left: 1000px;}
+  75% {left: 3000px;}
+  100% {left: 4000px;}
+}
+
+@-moz-keyframes move{
+  from {left: 0px;}
+    to {right: 500px;}
 }
 
 
@@ -45,14 +52,6 @@
   -webkit-animation-name: move;
   -webkit-animation-duration: 5s;
   -webkit-animation-delay: 2s;
-}
-
-.div {
-  height: 100px;
-  width: 100px;
-  animation-name: move;
-  background-color: red;
-  animation-duration: 5s;
 }
 
 a:link {
