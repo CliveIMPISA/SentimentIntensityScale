@@ -26,11 +26,33 @@
   color: #FF0000;
 }
 
-.animated.image-animated {
-  width: 1000px;
-  height: 600px;
-  -webkit-animation: mymove 5s infinite;
-  animation: mymove 5s infinite;
+@-webkit-keyframes example {
+  25% {left: 500px;}
+  50% {left: 1000px;}
+  75% {left: 3000px;}
+  100% {left: 4000px;}
+}
+
+@-webkit-keyframes move{
+  from{left: 0px;}
+    to{right: 500px;}
+}
+
+
+.animated.img-animated {
+  width: 700px;
+  height: 300px;
+  -webkit-animation-name: move;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-delay: 2s;
+}
+
+.div {
+  height: 100px;
+  width: 100px;
+  animation-name: move;
+  background-color: red;
+  animation-duration: 5s;
 }
 
 a:link {
