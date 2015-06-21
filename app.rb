@@ -28,4 +28,21 @@ class CarReviewAPI < Sinatra::Base
     haml :contact
   end
 
+  get '/over' do
+    haml :over
+  end
+
+  get '/over1' do
+    @makes = Car.where("year = ?", params[:year])
+    @year = params[:year]
+    haml :over1
+  end
+
+  get '/over2' do
+    @skills = Car.where("make = ?", params[:make])
+    @makes = params[:make]
+    @year = params[:year]
+    haml :over2
+  end
+
 end

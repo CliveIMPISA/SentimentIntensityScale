@@ -1,0 +1,18 @@
+%h2{style: "color: Blue"} Overall Ratings
+%p
+  Select the model of the vehicle that you desire to view.
+  The highest rating is 10.
+%form
+  %div
+    %select
+      <option value=#{@year}>#{@year}
+
+    %select
+      <option value=#{@makes}>#{@makes}
+
+    %select
+      %option{:value => "default"} Select Model
+      -if @skills
+        - @skills.each do |skill|
+          <option value=#{skill.model}>#{skill.model}
+    %input{:type => 'submit', :id => 'over2-form-submit', :class => 'btn btn-default', :value => 'submit'}

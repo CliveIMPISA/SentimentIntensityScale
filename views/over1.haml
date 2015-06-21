@@ -1,0 +1,14 @@
+%h2{style: "color: Blue"} Overall Ratings
+%p
+  Select the make of the vehicle that you desire to view.
+  The highest rating is 10.
+%form
+  %div
+    %select
+      <option value=#{@year}>#{@year}
+
+    %select{:onchange => "window.location='/over2?year=' + #{@year}+'&make=' + this.value;"}
+      %option{:value => "default"} Select Make
+      -if @makes
+        - @makes.each do |m|
+          <option value=#{m.make}>#{m.make}
