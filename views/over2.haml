@@ -2,7 +2,7 @@
 %p
   Select the model of the vehicle that you desire to view.
   The highest rating is 10.
-%form
+%form{:action => '/over2', :method => 'post', :id => 'user-form', class: 'form-inline'}
   %div
     %select
       <option value=#{@year}>#{@year}
@@ -10,9 +10,30 @@
     %select
       <option value=#{@makes}>#{@makes}
 
-    %select
+    %select{:onchange => "window.location='/over2?model=' + this.value;"}
       %option{:value => "default"} Select Model
       -if @skills
         - @skills.each do |skill|
           <option value=#{skill.model}>#{skill.model}
     %input{:type => 'submit', :id => 'over2-form-submit', :class => 'btn btn-default', :value => 'submit'}
+%p
+%p
+%p
+-if @car
+  %table{class: 'center', :border => '1'}
+    %tbody
+      %tr
+        %th Year
+        %th Make
+        %th Model
+        %th Sentiment
+      -@car.each do |c|
+        %tr
+          %td
+            = c['year']
+          %td
+            = c['make']
+          %td
+            = c['model']
+          %td
+            = c['model_sentiment']

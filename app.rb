@@ -45,4 +45,9 @@ class CarReviewAPI < Sinatra::Base
     haml :over2
   end
 
+  post '/over2' do
+    @car = Car.find_by_model(params[:model])
+    #haml :over2
+  end
+
 end
