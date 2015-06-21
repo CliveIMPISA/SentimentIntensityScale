@@ -1,7 +1,8 @@
 require 'sinatra'
 require 'json'
-require_relative 'model/car'
+require_relative './model/car'
 require 'csv'
+require 'config_env'
 
 
 class CarReviewAPI < Sinatra::Base
