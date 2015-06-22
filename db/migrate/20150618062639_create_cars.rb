@@ -9,6 +9,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :make_sentiment
       t.string :model_positive
       t.string :model_negative
+      t.string :features
       t.timestamps null: false
     end
   end

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150618062639) do
     t.string   "make_sentiment"
     t.string   "model_positive"
     t.string   "model_negative"
+    t.string   "features"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
