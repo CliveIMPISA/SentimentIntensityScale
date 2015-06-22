@@ -34,20 +34,29 @@ class CarReviewAPI < Sinatra::Base
 
   get '/over1' do
     @makes = Car.where("year = ?", params[:year])
+    @newmake = []
+    @makes.each do |m|
+      @newmake << m.make
+    end
+    @makes = @newmake.uniq
     @year = params[:year]
     haml :over1
   end
 
   get '/over2' do
-    @skills = Car.where("make = ?", params[:make])
+    @skills = Car.where("make = ?", params[:make]).where("year = ?", params[:year])
     @makes = params[:make]
     @year = params[:year]
     haml :over2
   end
 
-  post '/over2' do
-    @car = Car.find_by_model(params[:model])
-    #haml :over2
+  post '/over3' do
+    @car = Car.where("year = ?", params[:year]).where("model = ?", params[:model_s])
+    haml :over3
+  end
+
+  post '/over' do
+    haml :over
   end
 
 end

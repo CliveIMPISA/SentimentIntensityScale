@@ -71,3 +71,27 @@ a:visited {
 a:hover{
   color: red;
 }
+
+.over.table {
+  font-family: Cursive, Arial;
+  padding: 100px 100px 100px 100px;
+  border: 3px solid #4791FF;
+  margin: auto;
+  text-align: left;
+
+}
+
+.rows{
+  border: 3px solid #4791FF;
+}
+
+#over3-form-submit {
+  font-family: Cursive, Arial;
+  font-size: 14px;
+  background-color: white;
+  position: absolute;
+  left: 550px;
+  top: 400px;
+  text-align: center;
+  text-shadow: 2px 2px #cc0099;
+}

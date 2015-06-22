@@ -1,0 +1,24 @@
+%h2{style: "color: #000066"} Overall Ratings
+%p
+  The highest rating is 10.
+
+-if @car
+  %table{class: 'over table', :border => '1'}
+    %tbody
+      %tr{class: 'rows'}
+        %th{class: 'rows'} Year
+        %th{class: 'rows'} Make
+        %th{class: 'rows'} Model
+        %th{class: 'rows'} Sentiment
+      -@car.each do |c|
+        %tr{class: 'rows'}
+          %td{class: 'row'}
+            = c['year']
+          %td{class: 'rows'}
+            = c['make']
+          %td{class: 'rows'}
+            = c['model']
+          %td{class: 'rows'}
+            = c['model_sentiment']
+%form{:action => '/over', :method => 'post', :id => 'over3-form', class: 'form-inline'}
+  %input{:type => 'submit', :id => 'over3-form-submit', :class => 'btn btn-default', :value => 'Choose new vehicle'}

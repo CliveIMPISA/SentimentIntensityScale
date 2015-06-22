@@ -1,16 +1,16 @@
-%h2{style: "color: Blue"} Overall Ratings
+%h2{style: "color: #000066"} Overall Ratings
 %p
   Select the model of the vehicle that you desire to view.
   The highest rating is 10.
-%form{:action => '/over2', :method => 'post', :id => 'user-form', class: 'form-inline'}
+%form{:action => '/over3', :method => 'post', :id => 'user-form', class: 'form-inline'}
   %div
-    %select
+    %select{:name => "year"}
       <option value=#{@year}>#{@year}
 
-    %select
+    %select{:name => "make_s"}
       <option value=#{@makes}>#{@makes}
 
-    %select{:onchange => "window.location='/over2?model=' + this.value;"}
+    %select{:name => "model_s"}
       %option{:value => "default"} Select Model
       -if @skills
         - @skills.each do |skill|
