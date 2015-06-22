@@ -71,8 +71,8 @@ class CarReviewAPI < Sinatra::Base
 
   get '/rlist' do
     num = params[:range].split('-')
-    
-
+    @car = Car.where("model_sentiment < ? AND model_sentiment >= ?", num[0], num[1])
+    haml :rlist
   end
 
 end

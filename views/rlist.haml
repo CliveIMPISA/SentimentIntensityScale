@@ -5,19 +5,19 @@
   %table{class: 'rlist table', :border => '1'}
     %tbody
       %tr{class: 'rows'}
-        %th{class: 'rows'} Year
-        %th{class: 'rows'} Make
-        %th{class: 'rows'} Model
-        %th{class: 'rows'} Sentiment
+        %th{class: 'lrows'} Year
+        %th{class: 'lrows'} Make
+        %th{class: 'lrows'} Model
+        %th{class: 'lrows'} Sentiment
       -@car.each do |c|
-        %tr{class: 'rows'}
-          %td{class: 'row'}
+        %tr{class: 'lrows'}
+          %td{class: 'lrows'}
             = c['year']
-          %td{class: 'rows'}
+          %td{class: 'lrows'}
             = c['make']
-          %td{class: 'rows'}
+          %td{class: 'lrows'}
             = c['model']
-          %td{class: 'rows'}
+          %td{class: 'lrows'}
             = c['model_sentiment']
-%form{:action => '/ratings', :method => 'post', :id => 'rlist-form', class: 'form-inline'}
+%form{:action => '/ratings', :method => 'gett', :id => 'rlist-form', class: 'form-inline'}
   %input{:type => 'submit', :id => 'rlist-form-submit', :class => 'btn btn-default', :value => 'Choose new range'}

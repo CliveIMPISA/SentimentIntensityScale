@@ -5,8 +5,8 @@ class CreateCars < ActiveRecord::Migration
       t.integer :year
       t.string :make
       t.string :model
-      t.integer :model_sentiment
-      t.integer :make_sentiment
+      t.float :model_sentiment
+      t.float :make_sentiment
       t.string :model_positive
       t.string :model_negative
       t.string :features
