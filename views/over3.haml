@@ -22,13 +22,12 @@
             = c['model_sentiment']
 %form{:action => '/over', :method => 'post', :id => 'over3-form', class: 'form-inline'}
   %input{:type => 'submit', :id => 'over3-form-submit', :class => 'btn btn-default', :value => 'Choose new vehicle'}
-%div{class: 'features'}
-  -if @features
-    %table{class: 'feature table', :border => '1'}
-      %tbody
-        %tr{class: 'r'}
-          %th{class: 'r'} Main Features as dictated by Previous Users
-        -@features.each do |c|
-          %tr
-            %td
-              = c
+-if @features
+  %table{class: 'feature table', :border => '1'}
+    %tbody
+      %tr{class: 'r'}
+        %th{class: 'r'} Main Features as dictated by Previous Users
+      -@features.each do |c|
+        %tr
+          %td
+            = c
