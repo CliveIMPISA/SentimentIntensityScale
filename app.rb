@@ -52,11 +52,27 @@ class CarReviewAPI < Sinatra::Base
 
   post '/over3' do
     @car = Car.where("year = ?", params[:year]).where("model = ?", params[:model_s])
+    @features = []
+    feat = ""
+    @car.each do |f|
+      feat = f.features
+    end
+    @features = feat.split('* ')
     haml :over3
   end
 
   post '/over' do
     haml :over
+  end
+
+  get '/ratings' do
+    haml :ratings
+  end
+
+  get '/rlist' do
+    num = params[:range].split('-')
+    
+
   end
 
 end

@@ -1,0 +1,12 @@
+%h2{style: "color: #005c1f"} Find By Ratings
+%p{class: 'hp'}
+  Select the rating range to see all similar rated vehicles.
+%form
+  %div
+    %select{class: 'rangeselections', :onchange => "window.location='/rlist?range=' + this.value;"}
+      %option{:value => "default"} Select a range
+      %option{:value => "10-8.0"} 10-8.0
+      %option{:value => "8.0-6.0"} 8.0-6.0
+      %option{:value => "6.0-4.0"} 6.0-4.0
+      %option{:value => "4.0-2.0"} 4.0-2.0
+      %option{:value => "2.0 -0"} 2.0 and below

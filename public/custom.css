@@ -93,8 +93,8 @@ a:hover{
   font-color: black;
   background-color: #4791FF;
   position: absolute;
-  left: 550px;
-  top: 400px;
+  left: 1000px;
+  top: 450px;
   text-align: center;
   border-radius: 10px;
   border: 2px solid #4791FF;
@@ -158,4 +158,30 @@ a:hover{
 .hp {
   font-size: 16px;
   color: black;
+}
+
+.feature.table {
+  font-family: Cursive, Arial;
+  position: absolute;
+  top: 400px;
+  left: 200px;
+  margin: auto;
+  border: 3px solid #4791FF;
+  text-align: left;
+  width: 750px;
+
+}
+
+.r{
+  border: 3px solid #4791FF;
+}
+
+.rangeselections {
+  position: absolute;
+  left: 120px;
+  top: 300px;
+  height: 30px;
+  width: 120px;
+  border: 2px solid #99ff66;
+  border-radius: 2px;
 }
