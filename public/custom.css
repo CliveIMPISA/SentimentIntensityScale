@@ -91,11 +91,20 @@ a:hover{
   border: 3px solid #99ff66;
 }
 
+#rlist-form-submit {
+  background-color: #99ff66;
+  border: 3px solid #99ff66;
+  border-radius: 10px;
+  text-align: center;
+  font-family: Cursive, Arial;
+  font-size: 14px;
+  color: black;
+}
 
 #over3-form-submit {
   font-family: Cursive, Arial;
   font-size: 14px;
-  font-color: black;
+  color: black;
   background-color: #4791FF;
   position: absolute;
   left: 1000px;
