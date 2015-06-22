@@ -4,10 +4,10 @@
   The highest rating is 10.
 %form
   %div
-    %select
+    %select{class: 'yselections'}
       <option value=#{@year}>#{@year}
 
-    %select{:onchange => "window.location='/over2?year=' + #{@year}+'&make=' + this.value;"}
+    %select{class: 'makselections', :onchange => "window.location='/over2?year=' + #{@year}+'&make=' + this.value;"}
       %option{:value => "default"} Select Make
       -if @makes
         - @makes.each do |m|

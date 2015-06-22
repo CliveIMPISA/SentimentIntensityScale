@@ -4,13 +4,13 @@
   The highest rating is 10.
 %form{:action => '/over3', :method => 'post', :id => 'user-form', class: 'form-inline'}
   %div
-    %select{:name => "year"}
+    %select{class: 'yselections',:name => "year"}
       <option value=#{@year}>#{@year}
 
-    %select{:name => "make_s"}
+    %select{class: 'makselections', :name => "make_s"}
       <option value=#{@makes}>#{@makes}
 
-    %select{:name => "model_s"}
+    %select{class: 'modselections', :name => "model_s"}
       %option{:value => "default"} Select Model
       -if @skills
         - @skills.each do |skill|

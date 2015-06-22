@@ -4,7 +4,7 @@
   The highest rating is 10.
 %form
   %div
-    %select{:onchange => "window.location='/over1?year=' + this.value;"}
+    %select{class: 'yselections', :onchange => "window.location='/over1?year=' + this.value;"}
       %option{:value => "default"} Select a year
       %option{:value => "2007"} 2007
       %option{:value => "2008"} 2008

@@ -55,6 +55,8 @@
 .animated.img-animated {
   width: 700px;
   height: 300px;
+  position: absolute:
+  left: 700px;
   -webkit-animation-name: move;
   -webkit-animation-duration: 5s;
   -webkit-animation-delay: 2s;
@@ -88,10 +90,58 @@ a:hover{
 #over3-form-submit {
   font-family: Cursive, Arial;
   font-size: 14px;
-  background-color: white;
+  font-color: black;
+  background-color: #4791FF;
   position: absolute;
   left: 550px;
   top: 400px;
   text-align: center;
-  text-shadow: 2px 2px #cc0099;
+  border-radius: 10px;
+  border: 2px solid #4791FF;
+
+}
+
+#over2-form-submit {
+  font-family: Cursive, Arial;
+  font-size: 14px;
+  font-color: black;
+  background-color: #99ccff;
+  position: absolute;
+  left: 510px;
+  top: 300px;
+  text-align: center;
+  border-radius: 10px;
+  border: 5px solid #99ccff;
+  height: 30px;
+  width: 80px;
+  padding: 0px 0px 0px 0px;
+
+}
+
+.yselections {
+  position: absolute;
+  left: 120px;
+  top: 300px;
+  height: 30px;
+  width: 120px;
+  border: 2px solid #99ccff;
+  border-radius: 2px;
+}
+
+.makselections {
+  position: absolute;
+  left: 250px;
+  top: 300px;
+  height: 30px;
+  width: 120px;
+  border: 2px solid #99ccff;
+  border-radius: 2px;
+}
+
+.modselections {
+  position: absolute;
+  left: 380px;
+  top: 300px;
+  height: 30px;
+  width: 120px;
 }
