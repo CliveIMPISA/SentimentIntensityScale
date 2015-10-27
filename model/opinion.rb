@@ -1,5 +1,5 @@
 require 'sinatra/activerecord'
 require_relative '../environments'
 
-class Car < ActiveRecord::Base
+class Opinion < ActiveRecord::Base
 end

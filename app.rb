@@ -1,15 +1,15 @@
 require 'sinatra'
 require 'json'
-require_relative './model/car'
+require_relative './model/opinion'
 require 'csv'
 require 'config_env'
 
 
-class CarReviewAPI < Sinatra::Base
+class OpinionAPI < Sinatra::Base
   get '/' do
-    if Car.all.empty?
+    if Opinion.all.empty?
       CSV.foreach("Sentiments_overall.csv", :headers => true) do |row|
-        c = Car.new(car_id: row['ID'], year: row['Year'], make: row['Make'], model: row['Model'], model_sentiment: row['Model Sentiment'], make_sentiment: row['Make Sentiment'], model_positive: row['Model Positive Sentiments'], model_negative: row['Model Negative Sentiments'], features: row['Features'])
+        c = Opinion.new(opinion_id: row['ID'], year: row['Year'], make: row['Make'], model: row['Model'], model_sentiment: row['Model Sentiment'], make_sentiment: row['Make Sentiment'], model_positive: row['Model Positive Sentiments'], model_negative: row['Model Negative Sentiments'], features: row['Features'])
         c.save
       end
     end
@@ -33,7 +33,7 @@ class CarReviewAPI < Sinatra::Base
   end
 
   get '/over1' do
-    @makes = Car.where("year = ?", params[:year])
+    @makes = Opinion.where("year = ?", params[:year])
     @newmake = []
     @makes.each do |m|
       @newmake << m.make
@@ -44,14 +44,14 @@ class CarReviewAPI < Sinatra::Base
   end
 
   get '/over2' do
-    @skills = Car.where("make = ?", params[:make]).where("year = ?", params[:year])
+    @skills = Opinion.where("make = ?", params[:make]).where("year = ?", params[:year])
     @makes = params[:make]
     @year = params[:year]
     haml :over2
   end
 
   post '/over3' do
-    @car = Car.where("year = ?", params[:year]).where("model = ?", params[:model_s])
+    @Opinion = Opinion.where("year = ?", params[:year]).where("model = ?", params[:model_s])
     @features = []
     feat = ""
     @car.each do |f|
@@ -71,7 +71,7 @@ class CarReviewAPI < Sinatra::Base
 
   get '/rlist' do
     num = params[:range].split('-')
-    @car = Car.where("model_sentiment < ? AND model_sentiment >= ?", num[0], num[1]).order('model_sentiment DESC')
+    @car = Opinion.where("model_sentiment < ? AND model_sentiment >= ?", num[0], num[1]).order('model_sentiment DESC')
     haml :rlist
   end
 

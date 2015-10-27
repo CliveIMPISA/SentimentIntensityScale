@@ -1,7 +1,7 @@
-class CreateCars < ActiveRecord::Migration
+class CreateOpinion < ActiveRecord::Migration
   def change
-    create_table :cars do |t|
-      t.integer :car_id
+    create_table :opinions do |t|
+      t.integer :opinion_id
       t.integer :year
       t.string :make
       t.string :model
