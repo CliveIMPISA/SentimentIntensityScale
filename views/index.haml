@@ -1,10 +1,36 @@
-%img{class: 'animated img-animated', :src => "/images/other.png"}
+%img{class: 'animated img-animated', :src => "/images/Sentiment.jpg"}
 %h1
 %p
   %h3
-    %strong Carpinion Services
-  %ul{style: "font-size: 16px;"}
-    %li
-      %a{href: '/over'} Overall Ratings & Main Features
-    %li
-      %a{href: '/ratings'} Find by Ratings
+    %strong Sentiment Intensity Scale
+%table{class: 'tab_class', :border => '1'}
+  %tbody
+    %tr
+      %th ID
+      %th Comment
+      %th Type
+      %th Intensity
+    -if @car
+      -@car.each do |c|
+        %tr
+          %td
+            = c['opinion_id']
+          %td
+            = c['opinion_tweet']
+          %td
+            %select
+              %option{:value => "default"} Select Emotion
+              %option{:value => "joy"} Joy
+              %option{:value => "trust"} Trust
+              %option{:value => "fear"} Fear
+              %option{:value => "surprise"} Surprise
+              %option{:value => "sadnesse"} Sadness
+              %option{:value => "disgust"} Disgust
+              %option{:value => "anger"} Anger
+              %option{:value => "anticipation"} Anticipation
+          %td
+            %select
+              %option{:value => "default"} Select Emotional Intensity
+              %option{:value => "low"} Low
+              %option{:value => "normal"} Normal
+              %option{:value => "high"} High

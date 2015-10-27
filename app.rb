@@ -7,12 +7,14 @@ require 'config_env'
 
 class OpinionAPI < Sinatra::Base
   get '/' do
+    # Populating DataBase with file
     if Opinion.all.empty?
       CSV.foreach("Sentiments_overall.csv", :headers => true) do |row|
-        c = Opinion.new(opinion_id: row['ID'], year: row['Year'], make: row['Make'], model: row['Model'], model_sentiment: row['Model Sentiment'], make_sentiment: row['Make Sentiment'], model_positive: row['Model Positive Sentiments'], model_negative: row['Model Negative Sentiments'], features: row['Features'])
+        c = Opinion.new(opinion_id: row['ID'], opinion_tweet: row['Features'], opinion_strength: row['Make'], opinion_type: row['Model'])
         c.save
       end
     end
+      @car = Opinion.all
     haml :index
   end
 
@@ -47,7 +49,7 @@ class OpinionAPI < Sinatra::Base
     @skills = Opinion.where("make = ?", params[:make]).where("year = ?", params[:year])
     @makes = params[:make]
     @year = params[:year]
-    haml :over2
+    # haml :over2
   end
 
   post '/over3' do

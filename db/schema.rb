@@ -15,16 +15,11 @@ ActiveRecord::Schema.define(version: 20151027014148) do
 
   create_table "opinions", force: :cascade do |t|
     t.integer  "opinion_id"
-    t.integer  "year"
-    t.string   "make"
-    t.string   "model"
-    t.float    "model_sentiment"
-    t.float    "make_sentiment"
-    t.string   "model_positive"
-    t.string   "model_negative"
-    t.string   "features"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "opinion_tweet"
+    t.string   "opinion_strength"
+    t.string   "opinion_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end
